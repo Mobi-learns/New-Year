@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Wish</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header" id="wishHeader"></h1>
+        <p class="description" id="wishText"></p>
+        <img src="images/Happy-New-Year-2024-Gif-Greeting-Cards.gif" alt="New Year Image" class="wish-image">
+        <button onclick="goBackToHome()">Back to Home</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Extract name from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+
+        // Display a personalized wish
+        const wishHeader = document.getElementById('wishHeader');
+        const wishText = document.getElementById('wishText');
+        wishHeader.textContent = `Happy New Year, ${name}!`;
+        wishText.textContent = `Wishing you a year filled with joy, success, and prosperity.`;
+
+        function goBackToHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
